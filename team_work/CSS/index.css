@@ -1,6 +1,22 @@
+/*Comments by Mohammed Farhan N P*/
+
+/* 
+root is where all variables of css is stored
+every variable name should start with '--'.
+*/
 :root{
     --peach:#f7b6ad;
 }
+
+body
+{
+    margin:0;/* to remove white border */
+}
+
+/*
+Banner class for banner at the top section of the web page
+*/
+
 .banner{
     background-color:var(--peach);
     color:white;
@@ -9,15 +25,21 @@
     position:relative;
     text-align: center;
 }
-body
-{
-    margin:0;/* to remove white border */
-}
+
+/*
+Content class for content divsion tag to align items to the center and middle of the webpage.
+*/
+
 .content{
     display: flex;
     align-items:center;
     justify-content: center;
 }
+
+/*
+Button Container class for buttons inside Content Division Tag.
+*/
+
 .button-container{
     justify-content: center;
 }
