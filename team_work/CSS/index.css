@@ -6,6 +6,11 @@ every variable name should start with '--'.
 */
 :root{
     --peach:#f7b6ad;
+    --dusty-rose:#8a5862;
+    --off-white:#f8f8f8;
+    --dusty-rose-light:#b27c87;
+    --navy-blue:#34495e;
+
 }
 
 body
@@ -18,8 +23,8 @@ Banner class for banner at the top section of the web page
 */
 
 .banner{
-    background-color:var(--peach);
-    color:white;
+    background-color:var(--dusty-rose);
+    color:var(--navy-blue);
     padding:20px;
     font-size:24px;
     position:relative;
