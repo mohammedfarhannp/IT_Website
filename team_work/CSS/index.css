@@ -37,6 +37,7 @@ Content class for content divsion tag to align items to the center and middle of
 
 .content{
     display: flex;
+    flex-direction: column;
     align-items:center;
     justify-content: center;
 }
@@ -46,10 +47,40 @@ Button Container class for buttons inside Content Division Tag.
 */
 
 .button-container{
+    display: flex;
+    gap:15px;
     justify-content: center;
+    
 }
 
 .text{
     width:300px;
     word-wrap: break-word ;
+}
+.text h3{
+    color:var(--dusty-rose);
+}
+.text p{
+    color:var(--navy-blue);
+}
+.btn{
+    background-color: var(--dusty-rose);
+    color:var(--off-white);
+    padding: 10px;
+    border: 0 ;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+.btn:hover{
+    background-color: var(--dusty-rose-light);
+    transform: scale(1.1);
+}
+.course-btns{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    margin-top:250px;
+    gap:25px;
 }
