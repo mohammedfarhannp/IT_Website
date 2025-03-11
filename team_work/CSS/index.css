@@ -24,7 +24,7 @@ Banner class for banner at the top section of the web page
 
 .banner{
     background-color:var(--dusty-rose);
-    color:var(--navy-blue);
+    color:var(--off-white);
     padding:20px;
     font-size:24px;
     position:relative;
@@ -47,4 +47,9 @@ Button Container class for buttons inside Content Division Tag.
 
 .button-container{
     justify-content: center;
+}
+
+.text{
+    width:300px;
+    word-wrap: break-word ;
 }
