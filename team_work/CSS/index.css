@@ -16,6 +16,7 @@ every variable name should start with '--'.
 body
 {
     margin:0;/* to remove white border */
+    background-color: var(--off-white);
 }
 
 /*
@@ -94,3 +95,24 @@ Button Container class for buttons inside Content Division Tag.
     margin-top:250px;
     gap:25px;
 }
+.login-div{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height: 70vh;
+
+}
+
+.content-form{
+    display: flex; /* Flex for aligning elements of div tag according to our needs*/
+    flex-direction: column; /* making each element align vertically */
+    align-items: center;
+    gap:10px;
+    justify-content: center;
+    width: 300px;
+    height: 150px;
+    background-color: rgb(159, 255, 49);
+    border-radius: 15px;
+}
+
+
