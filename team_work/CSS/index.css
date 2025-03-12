@@ -36,9 +36,9 @@ Content class for content divsion tag to align items to the center and middle of
 */
 
 .content{
-    display: flex;
-    flex-direction: column;
-    align-items:center;
+    display: flex; /* Flex for aligning elements of div tag according to our needs*/
+    flex-direction: column; /* making each element align vertically */
+    align-items: center;
     justify-content: center;
 }
 
@@ -47,36 +47,46 @@ Button Container class for buttons inside Content Division Tag.
 */
 
 .button-container{
-    display: flex;
-    gap:15px;
+    display: flex; /* Flex for aligning elements of div tag according to our needs*/
+    gap: 15px; /* Gap between buttons */
     justify-content: center;
     
 }
 
+/* text class for text content */
 .text{
-    width:300px;
-    word-wrap: break-word ;
+    width: 300px;
+    word-wrap: break-word;
 }
+
+/* For all h3 tags inside div with 'text' class */
 .text h3{
-    color:var(--dusty-rose);
+    color: var(--dusty-rose);
 }
+
+/* For all p tags inside div with 'text' class */
 .text p{
-    color:var(--navy-blue);
+    color: var(--navy-blue);
 }
+
+/* btn class for any normal button | To be used throughout the entire website */
 .btn{
     background-color: var(--dusty-rose);
-    color:var(--off-white);
+    color: var(--off-white);
     padding: 10px;
     border: 0 ;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s ease;
-
 }
+
+/* btn class hover styles | for mouse hover above the button */
 .btn:hover{
     background-color: var(--dusty-rose-light);
     transform: scale(1.1);
 }
+
+/* course-btns container class for div tag with card like buttons */
 .course-btns{
     display:flex;
     justify-content:center;
