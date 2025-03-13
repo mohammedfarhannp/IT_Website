@@ -95,14 +95,16 @@ Button Container class for buttons inside Content Division Tag.
     margin-top:250px;
     gap:25px;
 }
+
+/* login-div class for login division */
 .login-div{
     display:flex;
     align-items:center;
     justify-content: center;
     height: 70vh;
-
 }
 
+/* content-form class for form tag */
 .content-form{
     display: flex; /* Flex for aligning elements of div tag according to our needs*/
     flex-direction: column; /* making each element align vertically */
