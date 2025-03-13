@@ -113,7 +113,7 @@ Button Container class for buttons inside Content Division Tag.
     justify-content: center;
     width: 300px;
     height: 150px;
-    background-color: rgb(159, 255, 49);
+    background-color: var(--silver-grey);
     border-radius: 15px;
 }
 
