@@ -40,8 +40,24 @@
 		// CHECKS IF THE FIELDS ARE EMPTY OR NOT
         if(!empty($_POST["regno"]) && !empty($_POST["password"]) )
         {
-            echo "<script>alert('hello!');</script>";
-        }            
+			$regno=$_POST["regno"];
+			$password=$_POST["password"];
+
+			$db = "IT_Dept";
+			$user ="root";
+			$pass="";
+			$server = "localhost";
+			$conn = new mysqli($server,$user,$pass,$db);
+			if($conn->connect_error)
+			{
+				die($conn->connect_error);
+			}
+			$query="select * from AUTH where REGISTER_NUMBER = '$regno'";
+			$result=$conn->query($query);
+			echo "<script>alert(" . $result["PASSWORD_ENCRYPTED"] . ")</script>";
+            
+		} 
+		           
     }
 ?>
 	</body>
