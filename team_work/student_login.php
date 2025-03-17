@@ -28,7 +28,7 @@
 			<form class="content-form" action="student_login.php" method="POST">
 	            <input type="text" name="regno" placeholder="REGISTER NUMBER">
 	            <input type="password" name="password" placeholder="PASSWORD">
-	            <button type="submit">Submit</button>
+	            <button type="submit">Login</button>
 	        </form>
 	    </div>
 		
@@ -40,18 +40,24 @@
 		// CHECKS IF THE FIELDS ARE EMPTY OR NOT
         if(!empty($_POST["regno"]) && !empty($_POST["password"]) )
         {
+			// STUDENT LOGIN CREDENTIALS
 			$regno=$_POST["regno"];
 			$password=$_POST["password"];
 
+			// DATABASE CREDENTIALS
 			$db = "IT_Dept";
 			$user ="root";
 			$pass="";
 			$server = "localhost";
+
+			// MYSQL CONNECTION
 			$conn = new mysqli($server,$user,$pass,$db);
 			if($conn->connect_error)
 			{
 				die($conn->connect_error);
 			}
+
+			// QUERY AND EXECUTION OF QUERY IN MYSQL
 			$query="select * from AUTH where REGISTER_NUMBER = '$regno'";
 			$result=$conn->query($query);
 
@@ -59,8 +65,11 @@
 			// Error due to $result being an array of rows
 			// echo "<script>alert(" . $result["PASSWORD_ENCRYPTED"] . ")</script>";
             
-			// Corrected
+			// Corrected Code
+
+			// FETCH A ROW FROM RESULT OF SQL QUERY
 			$row = $result->fetch_assoc();
+			
 			echo "<script>alert('" . $row["PASSWORD_ENCRYPTED"] . "')</script>";
 		} 
 		           
