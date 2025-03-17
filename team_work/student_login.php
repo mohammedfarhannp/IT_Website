@@ -54,8 +54,14 @@
 			}
 			$query="select * from AUTH where REGISTER_NUMBER = '$regno'";
 			$result=$conn->query($query);
-			echo "<script>alert(" . $result["PASSWORD_ENCRYPTED"] . ")</script>";
+
+
+			// Error due to $result being an array of rows
+			// echo "<script>alert(" . $result["PASSWORD_ENCRYPTED"] . ")</script>";
             
+			// Corrected
+			$row = $result->fetch_assoc();
+			echo "<script>alert('" . $row["PASSWORD_ENCRYPTED"] . "')</script>";
 		} 
 		           
     }
