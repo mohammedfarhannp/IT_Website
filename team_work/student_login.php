@@ -26,9 +26,9 @@
 	    <div class="login-div">
 	        <!-- FORM TAG -->
 			<form class="content-form" action="student_login.php" method="POST">
-	            <input type="text" name="regno" placeholder="REGISTER NUMBER">
-	            <input type="password" name="password" placeholder="PASSWORD">
-	            <button type="submit">Login</button>
+	            <input class="login-input" type="text" name="regno" placeholder="REGISTER NUMBER">
+	            <input class="login-input" type="password" name="password" placeholder="PASSWORD">
+	            <button class="btn" type="submit">Login</button>
 	        </form>
 	    </div>
 		
@@ -68,10 +68,27 @@
 			// Corrected Code
 
 			// FETCH A ROW FROM RESULT OF SQL QUERY
-			$row = $result->fetch_assoc();
+			//$row = $result->fetch_assoc();
 			
-			echo "<script>alert('" . $row["PASSWORD_ENCRYPTED"] . "')</script>";
+			if($result->num_rows== 1)
+			{
+				$row=$result->fetch_assoc();
+				if(password_verify($password,$row["PASSWORD_ENCRYPTED"]))
+				{
+					echo "<script> alert('Success')</script>";
+				}
+				else{
+					echo "<script> alert('Invalid Password')</script>";
+				}
+			}
+			else
+			{
+				echo "<script> alert('Invalid Register Number')</script>";
+			}
 		} 
+		else{
+			echo "<script> alert('Enter a valid Register Number and Password')</script>";
+		}
 		           
     }
 ?>

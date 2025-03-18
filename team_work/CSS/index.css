@@ -112,13 +112,24 @@ Button Container class for buttons inside Content Division Tag.
     display: flex; /* Flex for aligning elements of div tag according to our needs*/
     flex-direction: column; /* making each element align vertically */
     align-items: center;
-    gap:10px;
+    gap:20px;
     justify-content: center;
     width: 300px;
-    height: 150px;
+    height: 200px;
     background-color: var(--silver-grey);
     border-radius: 15px;
-    background-color: var(--navy-blue);
+    box-shadow: 08px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-input{
+    width: 175px;
+    height: 25px;
+    
+    border-radius: 5px;
 }
 
 
+.login-input:focus{
+    outline: var(--dusty-rose);
+    
+}
