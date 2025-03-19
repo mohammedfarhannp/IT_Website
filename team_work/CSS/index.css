@@ -121,15 +121,14 @@ Button Container class for buttons inside Content Division Tag.
     box-shadow: 08px 8px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* login-input class for input fields in login */
 .login-input{
     width: 175px;
     height: 25px;
-    
     border-radius: 5px;
 }
 
-
+/* Class Focus Effect */
 .login-input:focus{
-    outline: var(--dusty-rose);
-    
+    border-color: var(--dusty-rose);
 }

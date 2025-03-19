@@ -12,15 +12,15 @@
 		<!-- TITLE TAG -->
 		<title>Student Portal</title>
 		<!-- EXTERNAL CSS FILE LINKED HERE -->
-        <link rel="stylesheet" href="CSS/index.css">
-    </head>
+        	<link rel="stylesheet" href="CSS/index.css">
+    	</head>
 
 	<!-- BODY TAG -->
 	<body>
 		<!-- BANNER DIVISION -->
-	    <div class="banner">
+	   	<div class="banner">
 	        <h1>Student Login</h1>
-	    </div>
+		</div>
 
 		<!-- FORM DIVISION -->
 	    <div class="login-div">
@@ -35,7 +35,7 @@
 <!-- PHP TAG FOR LOGIN CHECK -->
 <?php
 	// CHECKS IF THE REQUEST METHOD IS POST
-    if($_SERVER["REQUEST_METHOD"]==="POST")
+   	if($_SERVER["REQUEST_METHOD"]==="POST")
 	{
 		// CHECKS IF THE FIELDS ARE EMPTY OR NOT
         if(!empty($_POST["regno"]) && !empty($_POST["password"]) )
@@ -52,6 +52,8 @@
 
 			// MYSQL CONNECTION
 			$conn = new mysqli($server,$user,$pass,$db);
+
+			// CHECKS IF CONNECTION ERROR
 			if($conn->connect_error)
 			{
 				die($conn->connect_error);
@@ -69,27 +71,37 @@
 
 			// FETCH A ROW FROM RESULT OF SQL QUERY
 			//$row = $result->fetch_assoc();
-			
+
+			// CHECK THE NUMBER OF ROWS
 			if($result->num_rows== 1)
 			{
+				// RETRIVE THE FIRST ROW TO A VARIABLE
 				$row=$result->fetch_assoc();
+
+				// CHECK IF THE PASSWORD FROM USER INPUT MATCHES THE ENCRYPTED PASSWORD IN THE DATABASE
 				if(password_verify($password,$row["PASSWORD_ENCRYPTED"]))
 				{
+					// DISPLAY 'SUCCESS'
 					echo "<script> alert('Success')</script>";
+
+					// TO DO - START SESSION, CREATE SESSION VARIABLE, (WHEN THIS PAGE LOADS, CHECK IF THE SESSION VARIABLE IS SET, IF YES THEN REDIRECT TO DASHBOARD)
 				}
+				// IF NOT MATCH THEN DISPLAY 'INVALID PASSWORD'
 				else{
 					echo "<script> alert('Invalid Password')</script>";
 				}
 			}
+			// IF NUMBER OF ROWS IS NOT 1 THEN DISPLAY 'INVALID REGISTER NUMBER'
 			else
 			{
 				echo "<script> alert('Invalid Register Number')</script>";
 			}
-		} 
-		else{
-			echo "<script> alert('Enter a valid Register Number and Password')</script>";
 		}
-		           
+		// IF THE INPUT FIELDS ARE EMPTY THEN DISPLAY 'ENTER VALID REGISTER NUMBER AND PASSWORD'
+		else 
+		{
+			echo "<script> alert('Enter a valid Register Number and Password')</script>";
+		}           
     }
 ?>
 	</body>
